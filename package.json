@@ -1,0 +1,25 @@
+{
+  "name": "sf-food-trucks",
+  "version": "1.0.0",
+  "description": "Gets a list of currently open food trucks in SF",
+  "main": "FoodTruckFinder.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vor89/sf-food-trucks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vor89/sf-food-trucks/issues"
+  },
+  "homepage": "https://github.com/vor89/sf-food-trucks#readme",
+  "dependencies": {
+    "request": "^2.87.0"
+  }
+}
