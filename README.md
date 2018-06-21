@@ -13,7 +13,7 @@ Node.js and npm need to be installed on the system.
 Install the dependencies.
 
 ```
-npm -i
+npm i
 ```
 
 Build.
