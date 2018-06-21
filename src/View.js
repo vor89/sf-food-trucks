@@ -3,19 +3,25 @@ const clear = function clear() {
 }
 
 const render = function render(foodTrucks) {
+  clear();
+  console.log(foodTrucksToTable(foodTrucks));
+  console.log('Press q to quit, or any other key to continue');
+}
+
+const foodTrucksToTable = function foodTrucksToTable(foodTrucks) {
   const nameHeader = 'NAME';
   const locationHeader = 'ADDRESS';
   const longestNameLength = Math.max(...foodTrucks.map(({ applicant }) => applicant.length), 
     nameHeader.length);
   const tab = 4;
-  const padding = longestNameLength + tab;
+  const leftColWidth = longestNameLength + tab;
 
-  clear();
-  console.log(nameHeader.padEnd(padding), locationHeader);
+  const table = [];
+  table.push(nameHeader.padEnd(leftColWidth), locationHeader, '\n');
   for (let { applicant, location } of foodTrucks) {
-    console.log(applicant.padEnd(padding), location);
+    table.push(applicant.padEnd(leftColWidth), location, '\n');
   }
-  console.log('\nPress q to quit, or any other key to continue');
+  return table.join('');
 }
 
 const renderError = function renderError(err) {
