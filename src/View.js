@@ -3,8 +3,6 @@ const clear = function clear() {
 }
 
 const render = function render(foodTrucks) {
-  clear();
-
   const nameHeader = 'NAME';
   const locationHeader = 'ADDRESS';
   const longestNameLength = Math.max(...foodTrucks.map(({ applicant }) => applicant.length), 
@@ -12,6 +10,7 @@ const render = function render(foodTrucks) {
   const tab = 4;
   const padding = longestNameLength + tab;
 
+  clear();
   console.log(nameHeader.padEnd(padding), locationHeader);
   for (let { applicant, location } of foodTrucks) {
     console.log(applicant.padEnd(padding), location);
