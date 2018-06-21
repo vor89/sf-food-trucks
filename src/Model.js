@@ -3,14 +3,14 @@ const request = require('request');
 const getFoodTrucks = function (day, time, offset, limit) {
   const dayBefore = day === 0 ? 6 : day - 1;
   const baseURL = 'http://data.sfgov.org/resource/bbb8-hzi6.json';
-  const query = `$select= applicant, location, dayorder, start24, end24
+  const query = `$select= applicant, location
     &$where= (dayorder = ${day} and start24 <= "${time}" and "${time}" < end24)
       or (end24 < start24 and dayorder = ${day} and start24 <= "${time}")
       or (end24 < start24 and dayorder = ${dayBefore} and "${time}" < end24)
     &$order= applicant, location
     &$offset= ${offset}
     &$limit= ${limit}`;
-  const fullURL = [baseURL, '?', query].join('');
+  const fullURL = `${baseURL}?${query}`;
   return new Promise((resolve, reject) => {
     request(fullURL, (error, response, body) => {
       if (error) {

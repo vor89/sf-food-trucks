@@ -1,7 +1,5 @@
-const clear = '\033c';
-
 const render = function render(foodTrucks) {
-  console.log(clear);
+  clear();
 
   const nameHeader = 'NAME';
   const locationHeader = 'ADDRESS';
@@ -18,11 +16,12 @@ const render = function render(foodTrucks) {
 }
 
 const renderError = function renderError(err) {
-  console.error(clear, err);
+  clear();
+  console.error(err);
 }
 
-const reset = function reset() {
-  console.log(clear);
+const clear = function clear() {
+  console.clear();
 }
 
-module.exports = {render, renderError, reset}
+module.exports = {render, renderError, clear};

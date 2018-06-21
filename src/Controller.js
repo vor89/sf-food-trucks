@@ -20,7 +20,7 @@ readline.emitKeypressEvents(process.stdin);
 process.stdin.setRawMode(true);
 process.stdin.on('keypress', (str, key) => {
   if (key.name === 'q' || (key.ctrl && key.name === 'c')) {
-    View.reset();
+    View.clear();
     process.exit();
   } else {
     getFoodTrucks(day, time, offset, limit)
