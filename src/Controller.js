@@ -1,7 +1,7 @@
-const readline = require('readline');
-const moment = require('moment-timezone');
-const { getFoodTrucks } = require('./Model');
-const View = require('./View');
+import readline from 'readline';
+import moment from 'moment-timezone';
+import getFoodTrucks from './Model';
+import View from './View';
 
 const dateTimeInSF = moment().tz('America/Los_Angeles');
 const day = Number(dateTimeInSF.format('d'));

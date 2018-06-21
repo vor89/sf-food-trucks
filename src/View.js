@@ -1,3 +1,7 @@
+const clear = function clear() {
+  console.clear();
+}
+
 const render = function render(foodTrucks) {
   clear();
 
@@ -20,8 +24,4 @@ const renderError = function renderError(err) {
   console.error(err);
 }
 
-const clear = function clear() {
-  console.clear();
-}
-
-module.exports = {render, renderError, clear};
+export default { clear, render, renderError };

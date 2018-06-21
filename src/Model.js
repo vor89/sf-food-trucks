@@ -1,4 +1,4 @@
-const request = require('request');
+import request from 'request';
 
 const getFoodTrucks = function (day, time, offset, limit) {
   const dayBefore = day === 0 ? 6 : day - 1;
@@ -24,5 +24,4 @@ const getFoodTrucks = function (day, time, offset, limit) {
   });
 }
 
-// TODO: use babel to use import/export
-exports.getFoodTrucks = getFoodTrucks;
+export default getFoodTrucks;
