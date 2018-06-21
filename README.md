@@ -1,6 +1,6 @@
 # SF Open Food Trucks
 
-This project displays the food trucks that are currently opened in SF
+This project displays the food trucks that are currently opened in SF.
 
 ## Getting Started
 
